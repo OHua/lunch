@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from stores.views import home
+from stores.views import home, store_list, store_detail
 
 urlpatterns = [
 	url(r'^$', home, name='home'),
+	url(r'^store/$', store_list, name='store_list'),
+	url(r'^store/(?P<pk>\d+)/$', store_detail, name='store_detail'),
     url(r'^admin/', admin.site.urls),
 ]
