@@ -24,4 +24,5 @@ urlpatterns = [
 	url(r'^store/$', store_list, name='store_list'),
 	url(r'^store/(?P<pk>\d+)/$', store_detail, name='store_detail'),
     url(r'^admin/', admin.site.urls),
+	url(r'^accounts/', include('django.contrib.auth.urls')),
 ]

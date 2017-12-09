@@ -28,6 +28,16 @@
       </ul>
     </div>
 	
+	<form class="navbar-right navbar-form" method="post" action="{% url 'logout' %}">
+	  {% csrf_token %}
+	  {% if user.is_authenticated %}
+	  <input type="hidden" name="next" value="{% url 'home' %}">
+	  <button class="btn btn-default" type="submit">登出</button>
+	  {% else %}
+	  <a class="btn btn-default" href="{% url 'login' %}">登入</a>
+	  {% endif %}
+	</form>
+	
   </div>
 </nav>
 {% endblock body %}
